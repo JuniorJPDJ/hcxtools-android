@@ -1,5 +1,8 @@
 #include <zlib.h>
 #include "gzops.h"
+#ifdef __ANDROID__
+#include <libgen.h>
+#endif
 
 /*===========================================================================*/
 bool testgzipfile(char *pcapinname)

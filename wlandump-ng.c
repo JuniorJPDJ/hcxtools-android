@@ -31,6 +31,10 @@
 #include <wiringPi.h>
 #endif
 
+#ifdef __ANDROID__
+#define strdupa strdup
+#endif
+
 #if __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define BIG_ENDIAN_HOST
 #endif

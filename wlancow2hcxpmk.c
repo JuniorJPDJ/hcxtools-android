@@ -6,13 +6,16 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#ifdef __ANDROID__
+#include <libgen.h>
+#define strdupa strdup
+#endif
 #ifdef __APPLE__
 #define strdupa strdup
 #include <libgen.h>
 #else
 #include <stdio_ext.h>
 #endif
-#include <curl/curl.h>
 
 #include "include/version.h"
 #include "common.h"

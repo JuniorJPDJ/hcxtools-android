@@ -189,7 +189,7 @@ typedef struct qos_frame qos_t;
 
 
 #if !defined __BYTE_ORDER || (__BIG_ENDIAN == __LITTLE_ENDIAN)
-#error Portability fix needed here
+//#error Portability fix needed here
 #endif
 struct mac_frame
 {

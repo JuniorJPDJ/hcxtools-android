@@ -13,6 +13,9 @@
 #include <netinet/in.h>
 #include <sys/time.h>
 #include <sys/types.h>
+#ifdef __ANDROID__
+#define strdupa strdup
+#endif
 #ifdef __APPLE__
 #define strdupa strdup
 #define PATH_MAX 255
@@ -2158,7 +2161,7 @@ if((ipv4->ver_hlen  & 0xf0) != 0x40)
 	{
 	return;
 	}
-ipv4len = (ipv4->ver_hlen && 0x0f) *4;
+ipv4len = (ipv4->ver_hlen & 0x0f) *4;
 if(caplen < (uint32_t)ipv4len)
 	{
 	return;
