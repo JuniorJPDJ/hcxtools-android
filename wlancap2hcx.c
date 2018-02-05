@@ -14,13 +14,17 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
+#ifdef __ANDROID__
+#include <libgen.h>
+#define strdupa strdup
+#endif
+
 #ifdef __APPLE__
 #define strdupa strdup
 #include <libgen.h>
 #else
 #include <stdio_ext.h>
 #endif
-#include <curl/curl.h>
 #include <openssl/sha.h>
 #include <openssl/hmac.h>
 #include <openssl/cmac.h>

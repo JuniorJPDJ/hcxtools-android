@@ -13,6 +13,9 @@
 #include <netinet/in.h>
 #include <sys/time.h>
 #include <sys/types.h>
+#ifdef __ANDROID__
+#define strdupa strdup
+#endif
 #ifdef __APPLE__
 #define strdupa strdup
 #define PATH_MAX 255

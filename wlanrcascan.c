@@ -25,6 +25,10 @@
 #include "include/version.h"
 #include "common.h"
 
+#ifdef __ANDROID__
+#define strdupa strdup
+#endif
+
 /*===========================================================================*/
 /* Definitionen */
 

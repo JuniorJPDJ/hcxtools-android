@@ -8,8 +8,12 @@
 #include <unistd.h>
 #include <limits.h>
 #include <time.h>
-#include <pcap.h>
 #include <sys/stat.h>
+#ifdef __ANDROID__
+#define strdupa strdup
+#include <endian.h>
+#include <libgen.h>
+#endif
 #ifdef __APPLE__
 #define strdupa strdup
 #include <libgen.h>
